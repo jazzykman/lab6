@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task9</title>
+    <style>
+        a {
+           font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="task1.html">Завдання 1</a>
+    <p></p>
+    <a href="task3.html">Завдання 3</a>
+    <p></p>
+    <a href="task5.html">Завдання 5</a>
+    <p></p>
+    <a href="task7.html">Завдання 7</a>
+    <p></p>
+    <a href="task9.html">Завдання 9</a>
+    <p></p>
+    <a href="task10.html">Завдання 10</a>
+
+    <script>
+    const tweets = [
+        { id: "000", likes: 5, tags: ["js", "nodejs"] },
+        { id: "001", likes: 2, tags: ["html", "css"] },
+        { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+        { id: "003", likes: 8, tags: ["css", "react"] },
+        { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+    ];
+
+    function countTags(tweets) {
+        const tagCount = {};
+        tweets.forEach(tweet => {
+            tweet.tags.forEach(tag => {
+                if (!tagCount[tag]) {
+                    tagCount[tag] = 0;
+                }
+                tagCount[tag]++;
+            });
+        });
+        return tagCount;
+    }
+
+    const result = countTags(tweets);
+    console.log(result);
+    </script>
+</body>
+</html>

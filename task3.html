@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task3</title>
+    <style>
+        a {
+           font-size:20px ;
+        }
+    </style>
+</head>
+<body>
+    <a href="task1.html">Завдання 1</a>
+    <p></p>
+    <a href="task3.html">Завдання 3</a>
+    <p></p>
+    <a href="task5.html">Завдання 5</a>
+    <p></p>
+    <a href="task7.html">Завдання 7</a>
+    <p></p>
+    <a href="task9.html">Завдання 9</a>
+    <p></p>
+    <a href="task10.html">Завдання 10</a>
+
+    <script>
+    const medicines = {
+        Агалгін: new Date("2022-05-01"),
+        Ношпа: new Date("2025-07-02"),
+        Альфахолін: new Date("2024-12-21"),
+        Аспірин: new Date("2022-08-15"),
+        Аспаркам: new Date("2024-04-18"),
+    };
+
+    const today = new Date();
+
+    const validMedicines = Object.entries(medicines)
+        .filter(([_, expirationDate]) => expirationDate > today) 
+        .sort((a, b) => a[1] - b[1]) 
+        .map(([name]) => name); 
+
+    console.log(validMedicines);
+    </script>
+</body>
+</html>

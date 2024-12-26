@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+    <style>
+        a {
+           font-size:20px ;
+        }
+    </style>
+</head>
+<body>
+    <a href="task1.html">Завдання 1</a>
+    <p></p>
+    <a href="task3.html">Завдання 3</a>
+    <p></p>
+    <a href="task5.html">Завдання 5</a>
+    <p></p>
+    <a href="task7.html">Завдання 7</a>
+    <p></p>
+    <a href="task9.html">Завдання 9</a>
+    <p></p>
+    <a href="task10.html">Завдання 10</a>
+
+    <script>
+    function createProduct(obj, callback) {
+        const product = { ...obj, id: Date.now() }; 
+        callback(product); 
+    }
+
+    function logProduct(product) {
+        console.log("Продукт:", product);
+    }
+
+    function logTotalPrice(product) {
+        const totalPrice = product.price * product.quantity;
+        console.log(`Загальна вартість: ${totalPrice}`);
+    }
+
+    const name = prompt("Введіть назву продукту:");
+    const price = parseFloat(prompt("Введіть ціну продукту:"));
+    const quantity = parseInt(prompt("Введіть кількість продукту:"), 10);
+
+    const newProduct = { name, price, quantity };
+
+    createProduct(newProduct, logProduct); 
+    createProduct(newProduct, logTotalPrice); 
+    </script>
+</body>
+</html>

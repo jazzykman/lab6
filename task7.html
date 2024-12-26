@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task7</title>
+    <style>
+        a {
+           font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="task1.html">Завдання 1</a>
+    <p></p>
+    <a href="task3.html">Завдання 3</a>
+    <p></p>
+    <a href="task5.html">Завдання 5</a>
+    <p></p>
+    <a href="task7.html">Завдання 7</a>
+    <p></p>
+    <a href="task9.html">Завдання 9</a>
+    <p></p>
+    <a href="task10.html">Завдання 10</a>
+
+    <script>
+    class Client {
+    #login;
+    #email;
+
+        constructor(login, email) {
+            this.login = login;
+            this.email = email;
+        }
+
+        get login() {
+            return this.#login;
+        }
+
+        set login(value) {
+            if (value.trim() === "") {
+            throw new Error("Login не може бути порожнім!");
+            }
+            this.#login = value;
+        }
+
+        get email() {
+            return this.#email;
+        }
+
+        set email(value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+            throw new Error("Некоректна email-адреса!");
+            }
+            this.#email = value;
+        }
+    }
+
+    try {
+        const userLogin = prompt("Введіть ваш логін:");
+        const userEmail = prompt("Введіть ваш email:");
+
+        const client = new Client(userLogin, userEmail);
+
+        console.log("Користувач успішно створений:");
+        console.log(`Логін: ${client.login}`);
+        console.log(`Email: ${client.email}`);
+    } catch (error) {
+        console.error("Помилка:", error.message);
+    }
+    </script>
+</body>
+</html>
